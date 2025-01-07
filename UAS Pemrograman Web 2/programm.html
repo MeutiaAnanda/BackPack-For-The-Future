@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program - BackPack To The Future </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        .nav {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .page-content {
+            margin-top: 70px;
+        }
+
+        .program-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .program-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-category {
+            background-color: #3498db;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .program-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .program-description {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .program-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .slots-left {
+            color: #e74c3c;
+            font-size: 0.9rem;
+        }
+
+        .join-button {
+            background-color: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .join-button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">BackPack For The Future</div>
+                <div class="nav-links">
+                    <a href="index.html">Beranda</a>
+                    <a href="tentang.html">Tentang</a>
+                    <a href="programm.html">Program</a>
+                    <a href="jadirelawan.html">Jadi Relawan</a>
+                    <a href="kontak.html">Kontak</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">BackPack For The Future</div>
+                <div class="nav-links">
+                    <a href="index.html">Beranda</a>
+                    <a href="tentang.html">Tentang</a>
+                    <a href="programm.html">Program</a>
+                    <a href="jadirelawan.html">Jadi Relawan</a>
+                    <a href="kontak.html">Kontak</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <header class="program-header">
+        <h1>Program Relawan</h1>
+        <p>Temukan program relawan yang sesuai dengan minat dan keahlian Anda</p>
+    </header>
+
+    <section class="filter-section">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="category">Kategori</label>
+                <select id="category">
+                    <option value="">Semua Kategori</option>
+                    <option value="pendidikan">Pendidikan</option>
+                    <option value="lingkungan">Lingkungan</option>
+                    <option value="kesehatan">Kesehatan</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="location">Lokasi</label>
+                <select id="location">
+                    <option value="">Semua Lokasi</option>
+                    <option value="jakarta">Jakarta</option>
+                    <option value="bandung">Bandung</option>
+                    <option value="bali">Bali</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="duration">Durasi</label>
+                <select id="duration">
+                    <option value="">Semua Durasi</option>
+                    <option value="short">1-3 hari</option>
+                    <option value="medium">1-2 minggu</option>
+                    <option value="long">1 bulan+</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="program-grid">
+            <div class="program-card" data-category="pendidikan" data-location="jakarta" data-duration="long">
+                <img src="https://i.pinimg.com/736x/28/d1/48/28d1481fba9d5ce5e468383d61143c1b.jpg" alt="Program Mengajar" class="program-image">
+                <div class="program-content">
+                    <span class="program-category">Pendidikan</span>
+                    <h2 class="program-title">Mengajar untuk Indonesia</h2>
+                    <div class="program-info">
+                        <div class="info-item">📍 Jakarta Timur</div>
+                        <div class="info-item">📅 1 Februari - 30 April</div>
+                        <div class="info-item">⏰ 2x seminggu</div>
+                    </div>
+                    <p class="program-description">Program mengajar dan bermain bersama anak-anak di daerah Cakung Jakarta Timur, Program ini fokus untuk mengajarkan membaca menulis dan matematika dasar pada anak-anak yang belum beruntung untuk bisa bersekolah .</p>
+                    <div class="program-footer">
+                        <span class="slots-left">Sisa 5 slot</span>
+                        <a href="mulaisekarang.html" class="join-button">Gabung Program</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Card 2 -->
+            <div class="program-card" data-category="lingkungan" data-location="bali" data-duration="short">
+                <img src="https://i.pinimg.com/736x/d4/12/cd/d412cdcc2c0fbd599c0f6d3ccbdf590a.jpg" alt="Program Lingkungan" class="program-image">
+                <div class="program-content">
+                    <span class="program-category">Lingkungan</span>
+                    <h2 class="program-title">membersihkan pantai dan edukasi tentang kebersihan laut</h2>
+                    <div class="program-info">
+                        <div class="info-item">📍 Bali</div>
+                        <div class="info-item">📅 15 Februari</div>
+                        <div class="info-item">⏰ 08:00AM - 20:00PM</div>
+                    </div>
+                    <p class="program-description">Kegiatan Membersihkan bibir pantai kuta bali dari sampah dari pagi hingga malam diselingi dengan istirahat dan pelepasan penyu kepantai</p>
+                    <div class="program-footer">
+                        <span class="slots-left">Sisa 12 slot</span>
+                        <a href="mulaisekarang.html" class="join-button">Gabung Program</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Card 3 -->
+            <div class="program-card" data-category="kesehatan" data-location="bandung" data-duration="long">
+                <img src="https://i.pinimg.com/736x/31/ee/e5/31eee500dfa20c562c8dac47a85c492c.jpg" alt="Program Kesehatan" class="program-image">
+                <div class="program-content">
+                    <span class="program-category">Kesehatan</span>
+                    <h2 class="program-title">Edukasi dan Check-up Kesehatan</h2>
+                    <div class="program-info">
+                        <div class="info-item">📍 Bandung</div>
+                        <div class="info-item">📅 28 Juni - 30 Juli</div>
+                        <div class="info-item">⏰ 2x seminggu</div>
+                    </div>
+                    <p class="program-description">Kegiatan program check-up kesehatan gratis dan edukasi di daerah Bandung. Program ini fokus kepada edukasi, pembagian suply P3K gratis dan kondisi kesehatan masyarakat.</p>
+                    <div class="program-footer">
+                        <span class="slots-left">Sisa 4 slot</span>
+                        <a href="mulaisekarang.html" class="join-button">Gabung Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const categoryFilter = document.getElementById('category');
+        const locationFilter = document.getElementById('location');
+        const durationFilter = document.getElementById('duration');
+        const programCards = document.querySelectorAll('.program-card');
+
+        function filterPrograms() {
+            const category = categoryFilter.value.toLowerCase();
+            const location = locationFilter.value.toLowerCase();
+            const duration = durationFilter.value.toLowerCase();
+
+            programCards.forEach(card => {
+                const matchesCategory = !category || card.dataset.category === category;
+                const matchesLocation = !location || card.dataset.location === location;
+                const matchesDuration = !duration || card.dataset.duration === duration;
+
+                card.style.display = matchesCategory && matchesLocation && matchesDuration ? 'block' : 'none';
+            });
+        }
+
+        categoryFilter.addEventListener('change', filterPrograms);
+        locationFilter.addEventListener('change', filterPrograms);
+        durationFilter.addEventListener('change', filterPrograms);
+
+        document.querySelectorAll('.join-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'mulaisekarang.html';
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <h3>BackPack For The Future</h3>
+            <p>Bersama Membangun Indonesia yang Lebih Baik</p>
+            <div class="contact-info">
+                <p>Email: info@BackPackForTheFuture.org</p>
+                <p>Telepon: (+62) 1234-5678-1234</p>
+                <p>Alamat: Jakarta, Indonesia</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
